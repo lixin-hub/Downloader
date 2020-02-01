@@ -10,14 +10,31 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-		
+
 		<android.support.v7.widget.Toolbar
 			android:id="@+id/toolbar"
 			android:layout_width="match_parent"
 			android:layout_height="?attr/actionBarSize"
-		    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+			app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
 	</android.support.design.widget.AppBarLayout>
+
+	<EditText
+		android:id="@+id/activity_mainEditText"
+		android:layout_width="match_parent"
+		android:ems="10"
+		android:layout_height="wrap_content"/>
+
+	<Button
+		android:text="开始"
+		android:id="@+id/activity_mainButton"
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"/>
+
+	<TextView
+		android:id="@+id/activity_mainTextView"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"/>
 
 </LinearLayout>
 
