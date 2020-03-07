@@ -62,8 +62,6 @@ public class DownloadUtil
 
         }
 
-
-        @Override
         public void run() 
         {
 
@@ -77,16 +75,7 @@ public class DownloadUtil
                     conn.setConnectTimeout(5000);
                     conn.setRequestMethod("GET");
 					length = getContentLength(path);
-					int block = 0;
-					if (length % threadNum == 0)
-					{block = (int) (length / threadNum);
-					}
-					if (length % threadNum != 0)
-					{
-						block = (int) length / threadNum + 1;
-
-					}
-
+					int block=length%threadNum==0 ? (int)length/threadNum : (int)length/threadNum+1;
 					int start=threadId * block;
 					int end=(threadId + 1) * block;
 					builder.append("threadId=" + threadId + "\n" + "block=" + block + "start=" + start + "end=" + end + "\n");
@@ -135,6 +124,7 @@ public class DownloadUtil
 				text.setText(builder.toString());
             }
 
+			
             super.run();
         }
 
